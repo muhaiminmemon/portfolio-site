@@ -31,8 +31,10 @@ export default function Contact() {
         body: JSON.stringify(formData),
       })
 
+      const data = await response.json()
+
       if (!response.ok) {
-        throw new Error("Failed to send message")
+        throw new Error(data.error || "Failed to send message")
       }
 
       toast({
@@ -46,9 +48,10 @@ export default function Contact() {
         message: "",
       })
     } catch (error) {
+      console.error("Contact form error:", error)
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again.",
+        description: error instanceof Error ? error.message : "Failed to send message. Please try again.",
         variant: "destructive",
       })
     } finally {
@@ -119,7 +122,7 @@ export default function Contact() {
                       <label htmlFor="name" className="text-sm font-medium">
                         Name
                       </label>
-                      <Input id="name" name="name" value={formData.name} onChange={handleChange} required />
+                      <Input id="name" name="name" value={formData.name} onChange={handleChange} required placeholder="Your name" disabled={isLoading} />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="email" className="text-sm font-medium">
@@ -132,6 +135,8 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         required
+                        placeholder="your.email@example.com"
+                        disabled={isLoading}
                       />
                     </div>
                   </div>
@@ -147,6 +152,8 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       required
+                      placeholder="Your message"
+                      disabled={isLoading}
                     />
                   </div>
 
