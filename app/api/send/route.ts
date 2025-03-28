@@ -1,16 +1,18 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-// Check if API key exists
-const resendApiKey = process.env.RESEND_API_KEY;
-if (!resendApiKey) {
-  throw new Error('RESEND_API_KEY is not defined in environment variables');
-}
-
-const resend = new Resend(resendApiKey);
-
 export async function POST(req: Request) {
   try {
+    // Check if API key exists at runtime
+    const resendApiKey = process.env.RESEND_API_KEY;
+    if (!resendApiKey) {
+      return NextResponse.json(
+        { error: 'Server configuration error: Missing API key' },
+        { status: 500 }
+      );
+    }
+
+    const resend = new Resend(resendApiKey);
     const { name, email, message } = await req.json();
 
     if (!name || !email || !message) {
