@@ -1,7 +1,6 @@
 import type React from "react"
 import { ThemeProvider } from "@/components/theme-provider"
 import AnimatedBackground from "@/components/animated-background"
-import CustomCursor from "@/components/custom-cursor"
 import SmoothScroll from "@/components/smooth-scroll"
 import "./globals.css"
 
@@ -25,7 +24,6 @@ export default function RootLayout({
             {typeof window === "undefined" ? null : (
               <>
                 <AnimatedBackground />
-                <CustomCursor />
                 <SmoothScroll />
               </>
             )}

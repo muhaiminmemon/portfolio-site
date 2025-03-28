@@ -60,7 +60,7 @@ export default function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Muhammad<span className="text-primary">.dev</span>
+          Muhaimin<span className="text-primary">.dev</span>
         </motion.a>
 
         {/* Desktop Navigation */}

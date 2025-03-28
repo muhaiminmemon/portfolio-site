@@ -42,10 +42,10 @@ export default function About() {
                 <h3 className="font-medium mb-1">Email</h3>
                 <p className="text-muted-foreground">
                   <a
-                    href="mailto:muhammad.muhaimin@mail.utoronto.ca"
-                    className="text-primary hover:underline"
+s
+
                   >
-                    muhammad.muhaimin@mail.utoronto.ca
+                    muhaiminmemon@gmail.com
                   </a>
                 </p>
               </CardContent>

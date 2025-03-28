@@ -79,18 +79,26 @@ export default function Hero() {
                 </a>
               </Button>
 
-              <Button asChild variant="outline" size="lg" className="group relative overflow-hidden">
-                <a href="#contact">
-                  <span className="relative z-10">Get In Touch</span>
-                  <span className="absolute inset-0 bg-primary/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                className="flex gap-4"
+              >
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+                >
+                  Get in Touch
                 </a>
-              </Button>
-
-              <Button asChild variant="ghost" size="icon" className="hidden sm:flex">
-                <a href="/resume.pdf" download aria-label="Download Resume">
-                  <Download className="h-5 w-5" />
+                <a
+                  href="/resume.pdf"
+                  download="Muhammad_Muhaimin_Resume.pdf"
+                  className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+                >
+                  Download Resume
                 </a>
-              </Button>
+              </motion.div>
             </div>
 
             <div className="flex gap-6">
@@ -117,7 +125,7 @@ export default function Hero() {
               </Button>
 
               <Button variant="ghost" size="icon" asChild className="hover:bg-primary/10 transition-colors">
-                <a href="mailto:muhammad.muhaimin@mail.utoronto.ca" aria-label="Email">
+                <a href="mailto:muhaiminmemon@gmail.com" aria-label="Email">
                   <Mail className="h-5 w-5" />
                 </a>
               </Button>
