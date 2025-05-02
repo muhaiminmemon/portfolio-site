@@ -20,7 +20,7 @@ const experiences = [
     skills: ["Python", "AI/ML", "Code Review", "Prompt Engineering"],
   },
   {
-    title: "Information Security Analyst",
+    title: "IAM Engineer",
     company: "Symcor",
     period: "Jan 2024 – August 2024",
     location: "Mississauga, ON",
