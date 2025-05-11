@@ -26,7 +26,7 @@ export default function Education() {
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
               <Calendar className="h-4 w-4" />
-              <span>Expected Graduation, May 2027</span>
+              <span>Expected Graduation, December 2026</span>
             </div>
           </CardHeader>
           <CardContent>
